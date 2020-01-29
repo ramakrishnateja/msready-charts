@@ -1,0 +1,70 @@
+apiVersion: v1
+entries:
+  cert-manager:
+  - apiVersion: v1
+    appVersion: v0.1.0
+    created: "2020-01-29T16:45:01.2823262-05:00"
+    description: A Helm chart for cert-manager
+    digest: 9e8b98f4ddc1083cc6aaadc3df3580b8838bc404edaf3f97c3c601410818ef6d
+    home: https://github.com/jetstack/cert-manager
+    icon: https://raw.githubusercontent.com/jetstack/cert-manager/master/logo/logo.png
+    keywords:
+    - cert-manager
+    - kube-lego
+    - letsencrypt
+    - tls
+    maintainers:
+    - email: james@jetstack.io
+      name: munnerz
+    name: cert-manager
+    sources:
+    - https://github.com/jetstack/cert-manager
+    urls:
+    - https://ramakrishnateja.github.io/msready-charts/master/charts/cert-manager/cert-manager-v0.1.0.tgz
+    version: v0.1.0
+  grafana:
+  - apiVersion: v1
+    appVersion: 6.5.2
+    created: "2020-01-29T16:45:01.283322-05:00"
+    description: The leading tool for querying and visualizing time series and metrics.
+    digest: 74dfd21deb064681094fbe4bc3f9a7e9b20093ed6e691983575cb36e084bd268
+    home: https://grafana.net
+    icon: https://raw.githubusercontent.com/grafana/grafana/master/public/img/logo_transparent_400x.png
+    kubeVersion: ^1.8.0-0
+    maintainers:
+    - email: zanhsieh@gmail.com
+      name: zanhsieh
+    - email: rluckie@cisco.com
+      name: rtluckie
+    - email: maor.friedman@redhat.com
+      name: maorfr
+    name: grafana
+    sources:
+    - https://github.com/grafana/grafana
+    urls:
+    - https://ramakrishnateja.github.io/msready-charts/master/charts/grafana/grafana-4.4.0.tgz
+    version: 4.4.0
+  prometheus:
+  - apiVersion: v1
+    appVersion: 2.15.2
+    created: "2020-01-29T16:45:01.2873266-05:00"
+    description: Prometheus is a monitoring system and time series database.
+    digest: aaed32c36762e65c478b7aa0256440b23c7e5c22aaec55ccef4e52ea9335e8cc
+    home: https://prometheus.io/
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    maintainers:
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: zanhsieh@gmail.com
+      name: zanhsieh
+    name: prometheus
+    sources:
+    - https://github.com/prometheus/alertmanager
+    - https://github.com/prometheus/prometheus
+    - https://github.com/prometheus/pushgateway
+    - https://github.com/prometheus/node_exporter
+    - https://github.com/kubernetes/kube-state-metrics
+    urls:
+    - https://ramakrishnateja.github.io/msready-charts/master/charts/prometheus/prometheus-10.3.1.tgz
+    version: 10.3.1
+generated: "2020-01-29T16:45:01.2793279-05:00"
