@@ -3,7 +3,7 @@ entries:
   cert-manager:
   - apiVersion: v1
     appVersion: v0.1.0
-    created: "2020-01-30T14:02:43.4217576-05:00"
+    created: "2020-01-30T17:29:32.995319-05:00"
     description: A Helm chart for cert-manager
     digest: 9e8b98f4ddc1083cc6aaadc3df3580b8838bc404edaf3f97c3c601410818ef6d
     home: https://github.com/jetstack/cert-manager
@@ -25,7 +25,7 @@ entries:
   fluent-bit:
   - apiVersion: v1
     appVersion: v0.0.1
-    created: "2020-01-30T14:02:43.4227562-05:00"
+    created: "2020-01-30T17:29:33.0003192-05:00"
     description: Uses fluent-bit Loki go plugin for gathering logs and sending them
       to Loki
     digest: b83f1c52b7bb25264f44b59fc2e5dfcdcc23876245fe1332fc84290668d4055c
@@ -44,7 +44,7 @@ entries:
   grafana:
   - apiVersion: v1
     appVersion: 6.5.2
-    created: "2020-01-30T14:02:43.4247565-05:00"
+    created: "2020-01-30T17:29:33.0053195-05:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: 74dfd21deb064681094fbe4bc3f9a7e9b20093ed6e691983575cb36e084bd268
     home: https://grafana.net
@@ -66,7 +66,7 @@ entries:
   loki:
   - apiVersion: v1
     appVersion: v1.3.0
-    created: "2020-01-30T14:02:43.4247565-05:00"
+    created: "2020-01-30T17:29:33.0103194-05:00"
     description: 'Loki: like Prometheus, but for logs.'
     digest: c9d70169f807c585a2d0d5786d62664414b712c5ee7062a2cefb236d74eaf258
     home: https://grafana.com/loki
@@ -84,7 +84,7 @@ entries:
   nginx-ingress:
   - apiVersion: v1
     appVersion: 0.28.0
-    created: "2020-01-30T14:02:43.4267564-05:00"
+    created: "2020-01-30T17:29:33.0153192-05:00"
     description: An nginx Ingress controller that uses ConfigMap to store the nginx
       configuration.
     digest: a9944db984700a87f0b72bde50256bc8088997aeabdf4d3d0a88b5b1c15735fc
@@ -107,7 +107,16 @@ entries:
   onboard:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-30T14:02:43.4277563-05:00"
+    created: "2020-01-30T17:29:33.023319-05:00"
+    description: A Helm chart for Kubernetes
+    digest: 8f260f2bde7ebfc01e4df9e15f626d59584958c75e597339569ad7136d0e5a5a
+    name: onboard
+    urls:
+    - https://ramakrishnateja.github.io/msready-charts/charts/onboard/onboard-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-01-30T17:29:33.0223579-05:00"
     description: A Helm chart for Kubernetes
     digest: 97dbddfb708cf9fa124bba57bd34f384a4545d0fa8cefeea47c34d66d27c51fb
     name: onboard
@@ -116,7 +125,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-01-30T14:02:43.4277563-05:00"
+    created: "2020-01-30T17:29:33.0193193-05:00"
     description: A Helm chart for Kubernetes
     digest: 0d3b32b9a8002ae0022349edb4c38ec8c60257f4a7df4df547e511e04952d79d
     name: onboard
@@ -126,7 +135,7 @@ entries:
   prometheus:
   - apiVersion: v1
     appVersion: 2.15.2
-    created: "2020-01-30T14:02:43.4317587-05:00"
+    created: "2020-01-30T17:29:33.0303197-05:00"
     description: Prometheus is a monitoring system and time series database.
     digest: aaed32c36762e65c478b7aa0256440b23c7e5c22aaec55ccef4e52ea9335e8cc
     home: https://prometheus.io/
@@ -149,7 +158,7 @@ entries:
   promtail:
   - apiVersion: v1
     appVersion: v1.3.0
-    created: "2020-01-30T14:02:43.4327569-05:00"
+    created: "2020-01-30T17:29:33.0353621-05:00"
     description: Responsible for gathering logs and sending them to Loki
     digest: d59ab482981d7b14bcb885d79e1e15b28f7881c906471efc67e88dec7307b67c
     home: https://grafana.com/loki
@@ -164,4 +173,4 @@ entries:
     urls:
     - https://ramakrishnateja.github.io/msready-charts/charts/promtail/promtail-0.17.0.tgz
     version: 0.17.0
-generated: "2020-01-30T14:02:43.4187572-05:00"
+generated: "2020-01-30T17:29:32.9883555-05:00"

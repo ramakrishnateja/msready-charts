@@ -1,0 +1,25 @@
+{{- $namespace := include "namespace" . -}}
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ $namespace }}-network-policy
+  namespace: {{ $namespace }}
+spec:
+  podSelector: {}
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          control-plane: "true"
+    - namespaceSelector:
+        matchLabels:
+          infra: "true"
+    {{- range allowedNamespaces }}
+    - namespaceSelector:
+        matchLabels:
+        {{- range .selectors }}
+          {{ .key }} | {{ .value }}
+        {{- end }}
+    {{- end }}
+
+        
