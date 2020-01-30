@@ -1,0 +1,16 @@
+{{- $namespace := include "namespace" . -}}
+{{- range .Values.ingress.tls }}
+{{- if and .key (ne .key "") .certificate (ne .certificate "") }}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ .secretName }}
+  namespace: {{ $namespace }}
+type: kubernetes.io/tls
+data:
+  tls.crt: {{ .certificate | b64enc }}
+  tls.key: {{ .key | b64enc }}
+
+---
+{{- end }}
+{{- end }}
