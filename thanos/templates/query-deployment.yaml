@@ -1,0 +1,43 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: thanos-query
+  labels:
+    app.kubernetes.io/name: thanos
+    app.kubernetes.io/component: query
+spec:
+  replicas: {{ .Values.query.replicas }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: thanos
+      app.kubernetes.io/component: query
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: thanos
+        app.kubernetes.io/component: query
+    spec:
+      containers:
+        - name: thanos-query
+          image: {{ .Values.image }}
+          imagePullPolicy: IfNotPresent
+          args:
+            - "query"
+            - "--log.level=debug"
+            {{- range .Values.query.sources }}
+            - "--store={{ . }}"
+            {{- end }}
+            - "--query.replica-label=replica"
+          ports:
+            - name: http
+              containerPort: 10902
+            - name: grpc
+              containerPort: 10901
+            - name: cluster
+              containerPort: 10900
+          livenessProbe:
+            httpGet:
+              path: /-/healthy
+              port: http
+          resources:
+{{ toYaml .Values.query.resources | indent 12 }}

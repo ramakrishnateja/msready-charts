@@ -1,0 +1,24 @@
+{{- if .Values.query.ingress.enabled }}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: thanos-query-ingress
+  annotations:
+    kubernetes.io/ingress.class: monitoring
+  labels:
+    app: thanos-query
+    infra: true
+spec:
+  rules:
+    - host: {{ .Values.query.ingress.hostName }}
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: thanos-query-http
+              servicePort: 10902
+  tls:
+    - hosts:
+      - {{ .Values.query.ingress.hostName }}
+      secretName: {{ .Values.query.ingress.tlsSecretName }}
+{{- end }}

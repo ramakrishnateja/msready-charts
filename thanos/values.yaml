@@ -1,0 +1,17 @@
+image: thanosio/thanos:v0.10.1
+
+query:
+  replicas: 2
+  sources: []
+  ingress:
+    enabled: false
+    hostName: ""
+    tlsSecretName: "ingress-tls-secret"
+  resources:
+    limits:
+      cpu: 300m
+      memory: 1Gi
+    requests:
+      cpu: 300m
+      memory: 1Gi
+  

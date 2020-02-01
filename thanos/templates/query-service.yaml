@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: thanos-query-cluster
+  labels:
+    app.kubernetes.io/name: thanos
+    app.kubernetes.io/component: query
+spec:
+  type: ClusterIP
+  ports:
+    - port: 10900
+      targetPort: cluster
+      protocol: TCP
+      name: cluster
+  selector:
+    app.kubernetes.io/name: thanos
+    app.kubernetes.io/component: query
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: thanos-query-grpc
+  labels:
+    app.kubernetes.io/name: thanos
+    app.kubernetes.io/component: query
+spec:
+  type: ClusterIP
+  ports:
+    - port: 10901
+      targetPort: grpc
+      protocol: TCP
+      name: grpc
+  selector:
+    app.kubernetes.io/name: thanos
+    app.kubernetes.io/component: query
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: thanos-query-http
+  namespace: thanos
+  labels:
+    app.kubernetes.io/name: thanos
+    app.kubernetes.io/component: query
+spec:
+  ports:
+    - port: 10902
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: thanos
+    app.kubernetes.io/component: query
