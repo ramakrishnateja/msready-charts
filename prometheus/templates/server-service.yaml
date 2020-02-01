@@ -47,4 +47,62 @@ spec:
 {{- end }}
   {{- end }}
   type: "{{ .Values.server.service.type }}"
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+{{- if .Values.server.service.annotations }}
+  annotations:
+{{ toYaml .Values.server.service.annotations | indent 4 }}
+{{- end }}
+  labels:
+    {{- include "prometheus.server.labels" . | nindent 4 }}
+{{- if .Values.server.service.labels }}
+{{ toYaml .Values.server.service.labels | indent 4 }}
+{{- end }}
+  name: {{ template "prometheus.server.fullname" . }}-thanos-web
+spec:
+{{- if .Values.thanos.httpLoadBalancerIP }}
+  loadBalancerIP: {{ .Values.thanos.httpLoadBalancerIP }}
+{{- end }}
+  ports:
+    - name: http-sidecar
+      port: 10902
+      protocol: TCP
+      targetPort: 10902
+  selector:
+    {{- include "prometheus.server.matchLabels" . | nindent 4 }}
+  type: "{{ .Values.thanos.httpServiceType }}"
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+{{- if .Values.server.service.annotations }}
+  annotations:
+{{ toYaml .Values.server.service.annotations | indent 4 }}
+{{- end }}
+  labels:
+    {{- include "prometheus.server.labels" . | nindent 4 }}
+{{- if .Values.server.service.labels }}
+{{ toYaml .Values.server.service.labels | indent 4 }}
+{{- end }}
+  name: {{ template "prometheus.server.fullname" . }}-thanos-grpc
+spec:
+{{- if .Values.thanos.grpcLoadBalancerIP }}
+  loadBalancerIP: {{ .Values.thanos.grpcLoadBalancerIP }}
+{{- end }}
+  ports:
+    - name: grpc
+      port: 10901
+      protocol: TCP
+      targetPort: 10901
+  selector:
+    {{- include "prometheus.server.matchLabels" . | nindent 4 }}
+  type: "{{ .Values.thanos.grpcServiceType }}"
+
 {{- end -}}
