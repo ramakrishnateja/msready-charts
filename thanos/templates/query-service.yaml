@@ -42,11 +42,15 @@ apiVersion: v1
 kind: Service
 metadata:
   name: thanos-query-http
-  namespace: thanos
+{{- if .Values.query.httpServiceAnnotations }}
+  annotations:
+{{ toYaml .Values.query.httpServiceAnnotations | indent 4 }}
+{{- end }}
   labels:
     app.kubernetes.io/name: thanos
     app.kubernetes.io/component: query
 spec:
+  type: {{ .Values.query.httpServiceType }}
   ports:
     - port: 10902
       targetPort: http

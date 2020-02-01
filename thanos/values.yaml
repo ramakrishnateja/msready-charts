@@ -3,10 +3,12 @@ image: thanosio/thanos:v0.10.1
 query:
   replicas: 2
   sources: []
+  httpServiceType: ClusterIP
+  httpServiceAnnotations: {}
   ingress:
     enabled: false
     hostName: ""
-    tlsSecretName: "ingress-tls-secret"
+    tlsSecretName: ""
   resources:
     limits:
       cpu: 300m
