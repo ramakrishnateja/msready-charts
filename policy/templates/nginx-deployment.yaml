@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: policy-service-nginx
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: policy-service-nginx
+spec:
+  replicas: {{ .Values.proxy.replicas }}
+  selector:
+    matchLabels:
+      app: policy-service-nginx
+  template:
+    metadata:
+      labels:
+        app: policy-service-nginx
+    spec:
+      containers:
+        - name: policy-service-nginx
+          image: {{ .Values.proxy.image }}
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: webhook-certs
+              mountPath: /etc/webhook/certs
+              readOnly: true
+          ports:
+            - name: https
+              containerPort: {{ .Values.proxy.port }}
+{{ toYaml .Values.proxy.resources | indent 12 }}              
+      volumes:
+        - name: webhook-certs
+          secret:
+            secretName: {{ .Values.ca.generatedSecretName }}

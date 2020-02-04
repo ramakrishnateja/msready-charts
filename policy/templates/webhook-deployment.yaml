@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: policy-service-webhook
+  labels:
+    app: policy-service-webhook
+spec:
+  replicas: {{ .Values.webhook.replicas }}
+  selector:
+    matchLabels:
+      app: policy-service-webhook
+  template:
+    metadata:
+      labels:
+        app: policy-service-webhook
+    spec:
+      containers:
+        - name: policy-service-webhook
+          image: {{ .Values.webhook.image }}
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: {{ .Values.webhook.port }}
+{{ toYaml .Values.webhook.resources | indent 12 }}         

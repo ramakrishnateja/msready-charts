@@ -1,0 +1,36 @@
+ca:
+  generatedSecretName: policy-service-cert-tls
+  organization: msready
+  issuerName: policy-issuer-ca
+  issuerSecretName: cert-manager-webhook-ca
+  # this needs to be in the Cluster Resource Namespace
+  # please check this article for more information
+  # https://cert-manager.io/docs/configuration/ca/
+  issuerSecretNamespace: cert-manager
+
+webhook:
+  replicas: 1
+  port: 8000
+  image: ramakrishnateja/kubepolicies:9
+  resources:
+    limits:
+      cpu: 100m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 256Mi
+
+proxy:
+  replicas: 1
+  image: ramakrishnateja/policiesnginx:8
+  port: 8443
+  resources:
+    limits:
+      cpu: 100m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 256Mi
+
+policies:
+  nopublicip: true

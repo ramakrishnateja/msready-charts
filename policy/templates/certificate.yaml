@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: policy-service-cert
+  namespace: {{ .Release.Namespace }}
+spec:
+  commonName: policy-service.{{ .Release.Namespace }}
+  # if successful the certificate is stored in the below secret
+  secretName: {{ .Values.ca.generatedSecretName }}
+  issuerRef:
+    name: {{ .Values.ca.issuerName }}
+    kind: ClusterIssuer
+  organization:
+    - {{ .Values.ca.organization }}
+  dnsNames:
+    - policy-service
+    - policy-service.{{ .Release.Namespace }}
+    - policy-service.{{ .Release.Namespace }}.svc

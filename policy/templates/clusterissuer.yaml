@@ -1,0 +1,10 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: ClusterIssuer
+metadata:
+  name: {{ .Values.ca.issuerName }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  ca:
+    # In case of ClusterIssuer secret should reside in the Cluster Resource Namespace
+    # https://cert-manager.io/docs/configuration/ca/
+    secretName:  {{ .Values.ca.issuerSecretName }}

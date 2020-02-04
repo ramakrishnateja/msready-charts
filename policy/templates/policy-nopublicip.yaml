@@ -1,0 +1,26 @@
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: nopublicip
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    cert-manager.io/inject-ca-from-secret: {{ .Values.ca.issuerSecretNamespace }}/{{ .Values.ca.issuerSecretName }}
+webhooks:
+  - name: nopublic
+    rules:
+      - apiGroups:
+          - ""
+        apiVersions:
+          - v1
+        operations:
+          - CREATE
+          - UPDATE
+        resources:
+          - services
+    failurePolicy: Fail
+    clientConfig:
+      service:
+        name: policy-service
+        namespace: {{ .Release.Namespace }}
+        path: /api/nopublicip
+      #url: "https://<functionname>.azurewebsites.net/api/NoPublicIp"

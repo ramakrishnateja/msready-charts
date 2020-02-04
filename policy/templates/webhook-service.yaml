@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: policy-service-webhook
+spec:
+  selector:
+    app: policy-service-webhook
+  ports:
+    - port: 80
+      targetPort: http
+      name: http
+      protocol: TCP
+  type: ClusterIP
