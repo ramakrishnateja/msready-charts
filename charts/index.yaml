@@ -3,7 +3,7 @@ entries:
   cert-manager:
   - apiVersion: v1
     appVersion: v0.1.0
-    created: "2020-02-04T20:06:28.4479349-05:00"
+    created: "2020-02-04T23:26:48.9354944-05:00"
     description: A Helm chart for cert-manager
     digest: 9e8b98f4ddc1083cc6aaadc3df3580b8838bc404edaf3f97c3c601410818ef6d
     home: https://github.com/jetstack/cert-manager
@@ -25,7 +25,7 @@ entries:
   fluent-bit:
   - apiVersion: v1
     appVersion: v0.0.1
-    created: "2020-02-04T20:06:28.4499021-05:00"
+    created: "2020-02-04T23:26:48.9429696-05:00"
     description: Uses fluent-bit Loki go plugin for gathering logs and sending them
       to Loki
     digest: b83f1c52b7bb25264f44b59fc2e5dfcdcc23876245fe1332fc84290668d4055c
@@ -44,7 +44,7 @@ entries:
   grafana:
   - apiVersion: v1
     appVersion: 6.5.2
-    created: "2020-02-04T20:06:28.4509375-05:00"
+    created: "2020-02-04T23:26:48.9514494-05:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: 74dfd21deb064681094fbe4bc3f9a7e9b20093ed6e691983575cb36e084bd268
     home: https://grafana.net
@@ -66,7 +66,7 @@ entries:
   linkerd2:
   - apiVersion: v1
     appVersion: edge-20.1.1
-    created: "2020-02-04T20:06:28.4529348-05:00"
+    created: "2020-02-04T23:26:48.9596491-05:00"
     dependencies:
     - name: partials
       repository: file://../partials
@@ -92,7 +92,7 @@ entries:
   loki:
   - apiVersion: v1
     appVersion: v1.3.0
-    created: "2020-02-04T20:06:28.4539346-05:00"
+    created: "2020-02-04T23:26:48.9668439-05:00"
     description: 'Loki: like Prometheus, but for logs.'
     digest: c9d70169f807c585a2d0d5786d62664414b712c5ee7062a2cefb236d74eaf258
     home: https://grafana.com/loki
@@ -110,7 +110,7 @@ entries:
   loki-stack:
   - apiVersion: v1
     appVersion: v1.3.0
-    created: "2020-02-04T20:06:28.4559382-05:00"
+    created: "2020-02-04T23:26:48.9797622-05:00"
     dependencies:
     - condition: loki.enabled
       name: loki
@@ -141,7 +141,7 @@ entries:
   nginx-ingress:
   - apiVersion: v1
     appVersion: 0.28.0
-    created: "2020-02-04T20:06:28.4589346-05:00"
+    created: "2020-02-04T23:26:48.9888126-05:00"
     description: An nginx Ingress controller that uses ConfigMap to store the nginx
       configuration.
     digest: a9944db984700a87f0b72bde50256bc8088997aeabdf4d3d0a88b5b1c15735fc
@@ -164,7 +164,16 @@ entries:
   onboard:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-02-04T20:06:28.4599373-05:00"
+    created: "2020-02-04T23:26:49.0075823-05:00"
+    description: A Helm chart for Kubernetes
+    digest: 6cdcaf9997e084000dfe3caf436de08a99063d7cee60bd3fed5ccb4c2c68e121
+    name: onboard
+    urls:
+    - https://ramakrishnateja.github.io/msready-charts/charts/onboard/onboard-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-02-04T23:26:49.0075823-05:00"
     description: A Helm chart for Kubernetes
     digest: 8f260f2bde7ebfc01e4df9e15f626d59584958c75e597339569ad7136d0e5a5a
     name: onboard
@@ -173,7 +182,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-02-04T20:06:28.4589346-05:00"
+    created: "2020-02-04T23:26:49.0015572-05:00"
     description: A Helm chart for Kubernetes
     digest: 97dbddfb708cf9fa124bba57bd34f384a4545d0fa8cefeea47c34d66d27c51fb
     name: onboard
@@ -182,7 +191,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-02-04T20:06:28.4589346-05:00"
+    created: "2020-02-04T23:26:48.9943434-05:00"
     description: A Helm chart for Kubernetes
     digest: 0d3b32b9a8002ae0022349edb4c38ec8c60257f4a7df4df547e511e04952d79d
     name: onboard
@@ -191,7 +200,7 @@ entries:
     version: 0.1.0
   partials:
   - apiVersion: v1
-    created: "2020-02-04T20:06:28.4599373-05:00"
+    created: "2020-02-04T23:26:49.0141745-05:00"
     description: A Helm chart containing Linkerd partial templates, depended by the
       'linkerd' and 'patch' charts.
     digest: 8ecf65b82703ebe901a8b12a83cd18b428a31bf035d55e7ea9a29ce5a652ba36
@@ -202,7 +211,7 @@ entries:
   policy:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-02-04T20:06:28.4609347-05:00"
+    created: "2020-02-04T23:26:49.027432-05:00"
     description: A Helm chart for policy deployment
     digest: 3aacf205989592cdaf3c7b79c6cbccdcdc72021b3422d6a32a032c8f12fb780f
     name: policy
@@ -211,7 +220,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-02-04T20:06:28.4609347-05:00"
+    created: "2020-02-04T23:26:49.0208332-05:00"
     description: A Helm chart for policy deployment
     digest: 0337be2e5ed9f09b46bb0e33986b845be757f87e7a0dd0dfcdd91f23e6ddc5e5
     name: policy
@@ -221,7 +230,7 @@ entries:
   prometheus:
   - apiVersion: v1
     appVersion: 2.15.2
-    created: "2020-02-04T20:06:28.4789033-05:00"
+    created: "2020-02-04T23:26:49.0947883-05:00"
     description: Prometheus is a monitoring system and time series database.
     digest: 98a0cfb1597f6372798242c66fc32c5ac14d9d2d7f9fb5098cfc8840f1c177b2
     home: https://prometheus.io/
@@ -243,7 +252,7 @@ entries:
     version: 10.3.6
   - apiVersion: v1
     appVersion: 2.15.2
-    created: "2020-02-04T20:06:28.4759033-05:00"
+    created: "2020-02-04T23:26:49.0847115-05:00"
     description: Prometheus is a monitoring system and time series database.
     digest: 7e6f6babc063ba9690bd43d0c11eb8ace4cddea917794533488822dd6b1fc53d
     home: https://prometheus.io/
@@ -265,7 +274,7 @@ entries:
     version: 10.3.5
   - apiVersion: v1
     appVersion: 2.15.2
-    created: "2020-02-04T20:06:28.4729345-05:00"
+    created: "2020-02-04T23:26:49.0735123-05:00"
     description: Prometheus is a monitoring system and time series database.
     digest: 1a9aea60b2859ed4abce2a3164af2b637c9855ea94a3b0dc1bb4762f40991141
     home: https://prometheus.io/
@@ -287,7 +296,7 @@ entries:
     version: 10.3.4
   - apiVersion: v1
     appVersion: 2.15.2
-    created: "2020-02-04T20:06:28.4699347-05:00"
+    created: "2020-02-04T23:26:49.0604649-05:00"
     description: Prometheus is a monitoring system and time series database.
     digest: 57ea642c5812e25829d812452c1cd23b8cb6ceb242b4edacb072bda16209e1b5
     home: https://prometheus.io/
@@ -309,7 +318,7 @@ entries:
     version: 10.3.3
   - apiVersion: v1
     appVersion: 2.15.2
-    created: "2020-02-04T20:06:28.4669379-05:00"
+    created: "2020-02-04T23:26:49.0494183-05:00"
     description: Prometheus is a monitoring system and time series database.
     digest: 3c1f7aeb2389f778a83fd17096bfb56ea4c70d95ac114457b7fc9caf1b5b815c
     home: https://prometheus.io/
@@ -331,7 +340,7 @@ entries:
     version: 10.3.2
   - apiVersion: v1
     appVersion: 2.15.2
-    created: "2020-02-04T20:06:28.4638987-05:00"
+    created: "2020-02-04T23:26:49.0394165-05:00"
     description: Prometheus is a monitoring system and time series database.
     digest: aaed32c36762e65c478b7aa0256440b23c7e5c22aaec55ccef4e52ea9335e8cc
     home: https://prometheus.io/
@@ -354,7 +363,7 @@ entries:
   promtail:
   - apiVersion: v1
     appVersion: v1.3.0
-    created: "2020-02-04T20:06:28.4799045-05:00"
+    created: "2020-02-04T23:26:49.1023141-05:00"
     description: Responsible for gathering logs and sending them to Loki
     digest: d59ab482981d7b14bcb885d79e1e15b28f7881c906471efc67e88dec7307b67c
     home: https://grafana.com/loki
@@ -372,7 +381,7 @@ entries:
   thanos:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-02-04T20:06:28.4809045-05:00"
+    created: "2020-02-04T23:26:49.1133447-05:00"
     description: A Helm chart for Thanos Querier
     digest: b7e64f4a714240b28dc535394d9b17625bb8cacb0be91e90a2f9a1e804c534f2
     name: thanos
@@ -381,11 +390,11 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-02-04T20:06:28.4799045-05:00"
+    created: "2020-02-04T23:26:49.1083808-05:00"
     description: A Helm chart for Thanos Querier
     digest: 7d1d67a595a08fd1342afcfcdc00bdabe9b74ec112b331b792f4d0097134bc7a
     name: thanos
     urls:
     - https://ramakrishnateja.github.io/msready-charts/charts/thanos/thanos-0.1.0.tgz
     version: 0.1.0
-generated: "2020-02-04T20:06:28.4459352-05:00"
+generated: "2020-02-04T23:26:48.9262688-05:00"

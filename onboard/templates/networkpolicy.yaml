@@ -14,7 +14,7 @@ spec:
     - namespaceSelector:
         matchLabels:
           infra: "true"
-    {{- range allowedNamespaces }}
+    {{- range .Values.allowedNamespaces }}
     - namespaceSelector:
         matchLabels:
         {{- range .selectors }}
