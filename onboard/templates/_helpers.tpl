@@ -36,5 +36,5 @@ Create chart name and version as used by the chart label.
 {{- end -}}
 
 {{- define "namespace" }}
-{{- printf "%s-%s" .Values.teamName .Values.environment}}
+{{- printf "%s-%s-%s" .Values.teamName .Values.region .Values.environment}}
 {{- end -}}
